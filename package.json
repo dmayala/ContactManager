@@ -1,0 +1,43 @@
+{
+  "name": "ContactManager",
+  "version": "1.0.0",
+  "description": "A sample Marionette application that manages contacts",
+  "main": "index.js",
+  "browser": {
+    "jquery": "./client/src/js/vendor/jquery/dist/jquery.js",
+    "spin": "./client/src/js/vendor/spin.js/spin.js",
+    "jquery.spin": "./client/src/js/vendor/spin.js/jquery.spin.js",
+    "underscore": "./client/src/js/vendor/underscore/underscore.js",
+    "backbone": "./client/src/js/vendor/backbone/backbone.js",
+    "backbone.localStorage": "./client/src/js/vendor/backbone.localstorage/backbone.localStorage.js",
+    "backbone.wreqr": "./client/src/js/vendor/backbone.wreqr/lib/backbone.wreqr.js",
+    "backbone.marionette": "./client/src/js/vendor/backbone.marionette/lib/backbone.marionette.js" 
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "coffeeify"
+    ]
+  },
+  "browserify-shim": "./config/shim.js",
+  "dependencies": {
+    "handlebars": "^2.0.0-beta.1",
+    "hapi": "^6.7.1"
+  },
+  "devDependencies": {
+    "browserify-shim": "^3.7.0",
+    "coffee-script": "^1.8.0",
+    "coffeeify": "^0.7.0",
+    "grunt": "^0.4.5",
+    "gulp": "^3.8.7",
+    "gulp-browserify": "^0.5.0",
+    "gulp-nodemon": "^1.0.4",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^0.7.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
