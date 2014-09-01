@@ -1,5 +1,9 @@
 # require dependencies
 Marionette = require 'backbone.marionette'
+Radio = require './radio'
+
+# require modules
+ContactsModule = require './apps/contacts/module'
 
 # create application namespace
 App = new Marionette.Application()
@@ -7,11 +11,13 @@ App = new Marionette.Application()
 # add regions
 App.addRegions mainRegion: '#main-region'
 
-# define static item view class
-class StaticView extends Marionette.ItemView
-  template: '#static-template'
+# add modules
+App.module 'contacts', ContactsModule
 
-# show StaticView on start
-App.on 'start', -> App.mainRegion.show new StaticView()
+App.getCurrentRoute = -> Backbone.history.fragment
+
+App.on 'start', ->
+  Backbone.history.start() if Backbone.history
+  Radio.vent.trigger('global', 'contacts:list') if @getCurrentRoute() == ''
 
 module.exports = App

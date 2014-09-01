@@ -5,8 +5,6 @@ Hapi = require 'hapi'
 host = process.argv[2] || 'localhost'
 port = Number(process.argv[3]) || 3000
 options =
-  debug:
-    request: ['received', 'error']
   views:
     engines: html: require 'handlebars'
     path: './views'

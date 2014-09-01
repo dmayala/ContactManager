@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Marionette Contact Manager</title>
-  <link href="public/css/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="public/css/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
   <link href="public/css/application.css" rel="stylesheet">
 </head>
 
@@ -23,8 +23,8 @@
   </div>
 
   <!-- templates -->
-  <script type="text/template" id="static-template">
-    <p>This is text that was rendered by our Marionette app.</p>
+  <script type="text/template" id="contact-list-item">
+    <%- firstName %> <%- lastName %>
   </script>
 
   <script src="public/js/app.js"></script>

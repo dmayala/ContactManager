@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Marionette Contact Manager</title>
+  <link href="dist/css/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="dist/css/application.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="container">
+        <div class="navbar-header"><span class="navbar-brand">Contact Manager</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="main-region" class="container">
+    <p>Here is static content in the web page. You'll notice that it gets replaced by our app as soon as we start it.</p>
+  </div>
+
+  <!-- templates -->
+  <script type="text/template" id="contact-list-item">
+    <td><%- firstName %></td>
+    <td><%- lastName %></td>
+    <td>
+      <a href="#contacts/<%- id %>" class="btn btn-sm btn-default js-show">
+        <i class="glyphicon glyphicon-eye-open"></i>
+        Show
+      </a>
+      <button class="btn btn-sm btn-danger js-delete">
+        <i class="glyphicon glyphicon-remove"></i>
+        Delete
+      </button>
+    </td>
+  </script>
+
+  <script type="text/template" id="contact-list">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </script>
+
+  <script type="text/template" id="contact-view">
+    <h1><%- firstName %> <%- lastName %></h1>
+    <p><strong>Phone number:</strong> <%- phoneNumber %></p>
+  </script>
+
+  <script type="text/template" id="missing-contact-view">
+    <div class="alert alert-danger">This contact does not exist!</div>
+  </script>
+
+  <!-- application code -->
+  <script src="dist/js/app.js"></script>
+</body>
+
+</html>
