@@ -1,12 +1,5 @@
 module.exports = {
   "jquery": "$",
-  "jquery.spin": {
-    "exports": "$.fn.spin",
-    "depends": {
-      "jquery":"$",
-      "spin":"Spinner"
-    }
-  },
   "underscore": "_",
   "backbone": { 
     "exports": "Backbone",
@@ -18,6 +11,13 @@ module.exports = {
   "backbone.localStorage": {
     "exports": "Backbone.LocalStorage",
     "depends": {
+      "backbone":"Backbone"
+    }
+  },
+  "backbone.syphon": {
+    "exports": "Backbone.Syphon",
+    "depends": {
+      "jquery":"jQuery",
       "backbone":"Backbone"
     }
   },

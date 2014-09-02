@@ -14,8 +14,9 @@
   ],
   "dependencies": {
     "bootstrap": "~3.2.0",
-	"backbone.marionette": "~2.1.0",
+    "backbone.marionette": "~2.1.0",
     "backbone.localstorage": "~1.1.13",
-    "jquery.spinjs": "*"
+    "jquery.spinjs": "*",
+    "marionette.backbone.syphon": "~0.5.0"
   }
 }
