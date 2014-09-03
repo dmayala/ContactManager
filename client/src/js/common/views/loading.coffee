@@ -3,7 +3,7 @@ $ = require 'jquery'
 spin = require 'jquery.spin'
 
 class Loading extends Marionette.ItemView
-  template: '#loading-view'
+  template: require './templates/loading'
 
   title: 'Loading Data'
   message: 'Please wait, data is loading.'

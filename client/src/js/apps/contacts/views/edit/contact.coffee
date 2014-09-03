@@ -2,7 +2,7 @@ Marionette = require 'backbone.marionette'
 Backbone.Syphon = require 'backbone.syphon'
 
 class Contact extends Marionette.ItemView
-  template: '#contact-form'
+  template: '../templates/edit/contact'
 
   events:
     'click button.js-submit': 'submitClicked'

@@ -18,77 +18,8 @@
     </div>
   </div>
 
-  <div id="main-region" class="container">
-    <p>Here is static content in the web page. You'll notice that it gets replaced by our app as soon as we start it.</p>
-  </div>
+  <div id="main-region" class="container"></div>
 
-  <!-- templates -->
-  <script type="text/template" id="contact-list-item">
-    <td><%- firstName %></td>
-    <td><%- lastName %></td>
-    <td>
-      <a href="#contacts/<%- id %>" class="btn btn-sm btn-default js-show">
-        <i class="glyphicon glyphicon-eye-open"></i>
-        Show
-      </a>
-      <button class="btn btn-sm btn-danger js-delete">
-        <i class="glyphicon glyphicon-remove"></i>
-        Delete
-      </button>
-    </td>
-  </script>
-
-  <script type="text/template" id="contact-list">
-    <thead>
-      <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-    </tbody>
-  </script>
-
-  <script type="text/template" id="contact-view">
-    <h1><%- firstName %> <%- lastName %></h1>
-    <a href="#contacts/<%- id %>/edit" class="btn btn-sm btn-default js-edit">
-      <i class="glyphicon glyphicon-pencil"></i>
-      Edit this contact
-    </a>
-    <p><strong>Phone number:</strong> <%- phoneNumber %></p>
-  </script>
-
-  <script type="text/template" id="missing-contact-view">
-    <div class="alert alert-danger">This contact does not exist!</div>
-  </script>
-
-  <script type="text/template" id="loading-view">
-    <h1><%- title %></h1>
-    <p><%- message %></p>
-    <div id="spinner"></div>
-  </script>
-
-  <script type="text/template" id="contact-form">
-    <h1>Edit <%- firstName %> <%- lastName %></h1>
-    <form>
-      <div class="form-group">
-        <label for="contact-firstName" class="control-label">First name:</label>
-        <input id="contact-firstName" name="firstName" type="text" value="<%- firstName %>" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="contact-lastName" class="control-label">Last name:</label>
-        <input id="contact-lastName" name="lastName" type="text" value="<%- lastName %>" class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="contact-phoneNumber" class="control-label">Phone number:</label>
-        <input id="contact-phoneNumber" name="phoneNumber" type="text" value="<%- phoneNumber %>" class="form-control">
-      </div>
-      <button class="btn js-submit btn-default">Save</button>
-    </form>
-  </script>
-
-  <!-- application code -->
   <script src="dist/js/app.js"></script>
 </body>
 

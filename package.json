@@ -17,7 +17,8 @@
   "browserify": {
     "transform": [
       "browserify-shim",
-      "coffeeify"
+      "coffeeify",
+      "hbsify"
     ]
   },
   "browserify-shim": "./config/shim.js",
@@ -40,7 +41,8 @@
     "pretty-hrtime": "^0.2.1",
     "require-dir": "^0.1.0",
     "vinyl-source-stream": "^0.1.1",
-    "watchify": "^1.0.2"
+    "watchify": "^1.0.2",
+    "hbsify": "^1.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

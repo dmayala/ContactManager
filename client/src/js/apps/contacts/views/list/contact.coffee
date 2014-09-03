@@ -2,7 +2,7 @@ Marionette = require 'backbone.marionette'
 
 class Contact extends Marionette.ItemView
   tagName: 'tr'
-  template: '#contact-list-item'
+  template: '../templates/list/contact'
 
   events:
     'click': 'highlightName'

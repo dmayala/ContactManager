@@ -21,7 +21,7 @@ gulp.task 'browserify', ->
     # specify app entry point
     entries: ['./client/src/js/initialize.coffee'],
     # file extensions
-    extensions: ['.coffee']
+    extensions: ['.coffee', '.hbs']
     # Enable source maps
     debug: true
   })

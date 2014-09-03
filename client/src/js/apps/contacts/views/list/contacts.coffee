@@ -3,7 +3,7 @@ Marionette = require 'backbone.marionette'
 class Contacts extends Marionette.CompositeView
   tagName: 'table'
   className: 'table table-hover'
-  template: '#contact-list'
+  template: '../templates/list/contacts'
   childView: require './contact'
   childViewContainer: 'tbody'
 
