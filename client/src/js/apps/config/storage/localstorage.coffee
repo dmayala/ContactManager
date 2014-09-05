@@ -1,5 +1,6 @@
 Backbone.LocalStorage = require 'backbone.localStorage'
-_ = require 'underscore'
+
+store = []
 
 findStorageKey = (entity) ->
   return _.result(entity, 'urlRoot') if entity.urlRoot
@@ -9,7 +10,11 @@ findStorageKey = (entity) ->
 
 StorageMixin = (entityPrototype) ->
   storageKey = findStorageKey entityPrototype
-  localStorage: new Backbone.LocalStorage storageKey
+  localStorage =_.find(store, (data) -> data.name is storageKey)
+  unless localStorage
+    localStorage = new Backbone.LocalStorage storageKey
+    store.push localStorage
+  return localStorage: localStorage
 
 configureStorage = (entity) ->
   _.extend entity.prototype, new StorageMixin entity.prototype
