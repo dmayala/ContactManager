@@ -38,11 +38,11 @@
     "gulp-notify": "^1.5.0",
     "gulp-sass": "^0.7.3",
     "gulp-util": "^3.0.1",
+    "hbsify": "^1.0.1",
     "pretty-hrtime": "^0.2.1",
     "require-dir": "^0.1.0",
     "vinyl-source-stream": "^0.1.1",
-    "watchify": "^1.0.2",
-    "hbsify": "^1.0.1"
+    "watchify": "^1.0.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,7 +1,7 @@
 Marionette = require 'backbone.marionette'
 
 class Contact extends Marionette.ItemView
-  template: '../templates/show/contact'
+  template: require '../templates/show/contact'
 
   events:
     'click a.js-edit': 'editClicked'
