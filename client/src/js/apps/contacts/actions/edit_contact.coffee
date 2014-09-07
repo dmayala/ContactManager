@@ -24,8 +24,10 @@ editContact = (id) ->
         new MissingContactShowView()
 
     view.on 'form:submit', (data) =>
-      contact.save data
-      @showContact contact.get 'id'
+      if contact.save data
+        @showContact contact.get 'id'
+      else
+        view.triggerMethod 'form:data:invalid', contact.validationError
 
     @options.mainRegion.show view
 
