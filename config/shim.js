@@ -1,6 +1,12 @@
 module.exports = {
   "jquery": "$",
   "underscore": "_",
+  "bootstrap": { 
+    "exports": "bootstrap",
+    "depends": { 
+      "jquery":"$"
+    }
+  },
   "backbone": { 
     "exports": "Backbone",
     "depends": { 

@@ -5,6 +5,7 @@
   "main": "index.js",
   "browser": {
     "jquery": "./client/src/js/vendor/jquery/dist/jquery.js",
+    "bootstrap": "./client/src/js/vendor/bootstrap/dist/js/bootstrap.js",
     "spin": "./client/src/js/vendor/spin.js/spin.js",
     "jquery.spin": "./client/src/js/vendor/spin.js/jquery.spin.js",
     "underscore": "./client/src/js/vendor/underscore/underscore.js",

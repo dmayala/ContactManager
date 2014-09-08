@@ -7,6 +7,7 @@ class Contact extends Marionette.ItemView
   events:
     'click': 'highlightName'
     'click td a.js-show': 'showClicked'
+    'click td a.js-edit': 'editClicked'
     'click button.js-delete': 'deleteClicked'
 
   highlightName: ->
@@ -16,6 +17,11 @@ class Contact extends Marionette.ItemView
     e.preventDefault()
     e.stopPropagation()
     @trigger 'contact:show', @model
+
+  editClicked: (e) ->
+    e.preventDefault()
+    e.stopPropagation()
+    @trigger 'contact:edit', @model
 
   deleteClicked: (e) ->
     e.stopPropagation()

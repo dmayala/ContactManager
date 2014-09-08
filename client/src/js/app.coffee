@@ -9,7 +9,12 @@ ContactsModule = require './apps/contacts/module'
 App = new Marionette.Application()
 
 # add regions
-App.addRegions mainRegion: '#main-region'
+App.addRegions
+  mainRegion: '#main-region'
+  dialogRegion:
+    regionClass: require './common/regions/dialog'
+    selector: '#dialog-region'
+
 
 # add modules
 App.module 'contacts', ContactsModule

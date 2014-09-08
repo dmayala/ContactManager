@@ -2,6 +2,9 @@ Marionette = require 'backbone.marionette'
 Backbone.Syphon = require 'backbone.syphon'
 
 class Contact extends Marionette.ItemView
+  initialize: ->
+    @title = "Edit #{@model.get 'firstName'} #{@model.get 'lastName'}"
+
   template: require '../templates/edit/contact'
 
   events:

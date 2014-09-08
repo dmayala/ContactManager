@@ -7,7 +7,10 @@ class Module extends Marionette.Module
     @startMediator()
 
   startMediator: ->
-    @controller = new Controller mainRegion: @app.mainRegion
+    @controller = new Controller 
+      mainRegion: @app.mainRegion
+      dialogRegion: @app.dialogRegion
+      
     router = new Router { controller: @controller }
 
 module.exports = Module
