@@ -7,5 +7,14 @@ class Contacts extends Marionette.CompositeView
   childView: require './contact'
   childViewContainer: 'tbody'
 
+  initialize: ->
+    @listenTo @collection, 'reset', =>
+      @attachHtml = (collectionView, childView, index) ->
+        collectionView.$el.append childView.el
+
+  onRenderCollection: ->
+    @attachHtml = (collectionView, childView, index) ->
+      collectionView.$el.prepend childView.el
+
 module.exports = Contacts
 

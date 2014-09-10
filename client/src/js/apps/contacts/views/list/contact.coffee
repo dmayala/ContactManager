@@ -6,26 +6,21 @@ class Contact extends Marionette.ItemView
 
   events:
     'click': 'highlightName'
-    'click td a.js-show': 'showClicked'
-    'click td a.js-edit': 'editClicked'
-    'click button.js-delete': 'deleteClicked'
+
+  triggers:
+    'click td a.js-show': 'contact:show'
+    'click td a.js-edit': 'contact:edit'
+    'click button.js-delete': 'contact:delete'
 
   highlightName: ->
     @$el.toggleClass 'warning'
 
-  showClicked: (e) ->
-    e.preventDefault()
-    e.stopPropagation()
-    @trigger 'contact:show', @model
-
-  editClicked: (e) ->
-    e.preventDefault()
-    e.stopPropagation()
-    @trigger 'contact:edit', @model
-
-  deleteClicked: (e) ->
-    e.stopPropagation()
-    @trigger 'contact:delete', @model
+  flash: (cssClass) ->
+    $view = @$el
+    $view.hide().removeClass().toggleClass(cssClass).fadeIn 800, ->
+      setTimeout ->
+        $view.toggleClass(cssClass)
+      , 500
 
   remove: ->
     @$el.fadeOut => Marionette.ItemView::remove.call(@)

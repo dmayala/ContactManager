@@ -4,6 +4,11 @@ configureStorage = require '../../config/storage/localstorage'
 class Contact extends Backbone.Model
   urlRoot: 'contacts'
 
+  defaults:
+    firstName: ""
+    lastName: ""
+    phoneNumber: ""
+
   validate: (attrs, options) ->
     errors = {}
     if not attrs.firstName

@@ -19,7 +19,9 @@ editContact = (id) ->
   $.when(fetchingContact).done (contact) =>
     view =
       if contact?
-        new ContactEditView model: contact
+        new ContactEditView 
+          model: contact
+          generateTitle: true
       else
         new MissingContactShowView()
 
