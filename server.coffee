@@ -24,7 +24,12 @@ server.route
   path: '/public/{file*}'
   handler: directory: path: './client/dist'
 
-# start server
-server.start ->
-  console.log "Server running at #{server.info.uri}"
+# register plugins
+server.pack.register [
+  { plugin: require './plugins/contact' }
+], (err) ->
+  throw err if err
 
+  # start server
+  server.start ->
+    console.log "Server running at #{server.info.uri}"
