@@ -6,6 +6,8 @@ ContactEditView = require '../views/edit/contact'
 ContactNewView = require '../views/new/contact'
 LayoutListView = require '../views/list/layout'
 PanelListView = require '../views/list/panel'
+FilteredCollection = require '../../../common/collections/filtered'
+
 
 listContacts = ->
   Backbone.history.navigate 'contacts'
@@ -17,7 +19,17 @@ listContacts = ->
 
   fetchingContacts = Radio.reqres.request 'global', 'contact:entities'
   $.when(fetchingContacts).done (contacts) =>
-    contactsListView = new ContactsListView collection: contacts
+    filteredContacts = FilteredCollection
+      collection: contacts
+      filterFunction: (filterCriterion) ->
+        criterion = filterCriterion.toLowerCase()
+        return (contact) ->
+          if contact.get('firstName').toLowerCase().indexOf(criterion) isnt -1 or
+          contact.get('lastName').toLowerCase().indexOf(criterion) isnt -1 or
+          contact.get('phoneNumber').toLowerCase().indexOf(criterion) isnt -1
+            return contact
+
+    contactsListView = new ContactsListView collection: filteredContacts
 
     contactsListView.on 'childview:contact:show', (childView, args) =>
       @showContact args.model.get('id')
