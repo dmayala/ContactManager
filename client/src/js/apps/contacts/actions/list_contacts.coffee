@@ -8,10 +8,8 @@ LayoutListView = require '../views/list/layout'
 PanelListView = require '../views/list/panel'
 FilteredCollection = require '../../../common/collections/filtered'
 
-
-listContacts = ->
-  Backbone.history.navigate 'contacts'
-
+listContacts = (criterion) ->
+  Backbone.history.navigate 'contacts' unless criterion
   @options.mainRegion.show new LoadingView()
 
   layoutListView = new LayoutListView();
@@ -29,10 +27,19 @@ listContacts = ->
           contact.get('phoneNumber').toLowerCase().indexOf(criterion) isnt -1
             return contact
 
+    if (criterion)
+      filteredContacts.filter(criterion)
+      panelListView.once 'show', ->
+        @triggerMethod 'set:filter:criterion', criterion
+
     contactsListView = new ContactsListView collection: filteredContacts
 
     contactsListView.on 'childview:contact:show', (childView, args) =>
       @showContact args.model.get('id')
+
+    panelListView.on 'contacts:filter', (filterCriterion) =>
+      filteredContacts.filter filterCriterion
+      Radio.vent.trigger 'global', 'contacts:filter', filterCriterion
 
     contactsListView.on 'childview:contact:edit', (childView, args) =>
       model = args.model

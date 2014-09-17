@@ -10,6 +10,9 @@ class BaseController extends Marionette.Controller
     @setHandlers()
 
   setHandlers: ->
+    Radio.vent.on 'global', 'contacts:filter', (criterion) ->
+      Backbone.history.navigate if criterion then "contacts/filter/criterion:#{criterion}" else 'contacts'
+
     Radio.vent.on 'global', 'contacts:list', =>
       @listContacts()
 
