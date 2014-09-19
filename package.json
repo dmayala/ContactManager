@@ -12,6 +12,7 @@
     "backbone": "./client/src/js/vendor/backbone/backbone.js",
     "backbone.localStorage": "./client/src/js/vendor/backbone.localstorage/backbone.localStorage.js",
     "backbone.syphon": "./client/src/js/vendor/marionette.backbone.syphon/lib/backbone.syphon.js",
+    "backbone.picky": "./client/src/js/vendor/backbone.picky/lib/backbone.picky.js",
     "backbone.wreqr": "./client/src/js/vendor/backbone.wreqr/lib/backbone.wreqr.js",
     "backbone.marionette": "./client/src/js/vendor/backbone.marionette/lib/backbone.marionette.js"
   },

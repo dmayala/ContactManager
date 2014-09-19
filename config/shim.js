@@ -27,6 +27,12 @@ module.exports = {
       "backbone":"Backbone"
     }
   },
+  "backbone.picky": {
+    "exports": "Backbone.Picky",
+    "depends": {
+      "backbone":"Backbone"
+    }
+  },
   "backbone.wreqr": {
     "exports": "Backbone.Wreqr",
     "depends": {
