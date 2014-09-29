@@ -3,6 +3,7 @@ Marionette = require 'backbone.marionette'
 Radio = require './radio'
 
 # require modules
+HeaderModule = require './apps/header/module'
 ContactsModule = require './apps/contacts/module'
 AboutModule = require './apps/about/module'
 
@@ -18,6 +19,7 @@ App.addRegions
     regionClass: require './common/regions/dialog'
 
 # add modules
+App.module 'header', HeaderModule
 App.module 'contacts', ContactsModule
 App.module 'about', AboutModule
 

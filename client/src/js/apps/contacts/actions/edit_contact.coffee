@@ -8,6 +8,7 @@ Radio = require '../../../radio'
 
 editContact = (id) ->
   Backbone.history.navigate "contacts/#{id}/edit"
+  Radio.commands.execute 'global', 'set:active:header', 'contacts'
 
   @options.mainRegion.show new LoadingView {
     title: 'Artificial Loading Delay'

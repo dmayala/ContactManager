@@ -10,6 +10,7 @@ FilteredCollection = require '../../../common/collections/filtered'
 
 listContacts = (criterion) ->
   Backbone.history.navigate 'contacts' unless criterion
+  Radio.commands.execute 'global', 'set:active:header', 'contacts'
   @options.mainRegion.show new LoadingView()
 
   layoutListView = new LayoutListView();
