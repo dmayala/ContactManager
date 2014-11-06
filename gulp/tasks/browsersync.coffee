@@ -1,10 +1,10 @@
 browserSync = require 'browser-sync'
 gulp = require 'gulp'
 
-gulp.task 'browserSync', ['build'], ->
+gulp.task 'browserSync', ['nodemon', 'build'], ->
   browserSync
-    server:
-      baseDir: ['client/']
+    proxy: '0.0.0.0:3000'
+    port: 3001
     files: [
       # watch everything in dist
       'client/dist/**'
